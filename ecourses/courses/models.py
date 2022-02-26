@@ -14,12 +14,11 @@ class Category (models.Model):
 class MultipleChoice(models.Model):
     content = models.TextField(null=False)
     correctAnswer = models.TextField(null=False)
+    answers = models.ManyToManyField("Answer",)
     def __str__(self):
         return self.content
 
 class Answer(models.Model):
-    answer = models.TextField(null=False)
-    multipleChoice = models.ForeignKey(MultipleChoice,on_delete= models.SET_NULL, null=True)
-
+    name = models.TextField(null=False)
     def __str__(self):
         return self.answer

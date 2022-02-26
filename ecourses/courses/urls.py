@@ -5,6 +5,7 @@ from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
 router.register('courses',views.MultipleChoiceViewSet)
+# router.register('answer',views.AnswerViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
